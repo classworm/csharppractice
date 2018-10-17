@@ -1,0 +1,43 @@
+using Xunit;
+
+namespace Chapter_B
+{
+    public class B01_FindFirstOccurance
+    {
+        /// <summary>
+        /// Find and return the index of first occurance of v 
+        /// </summary>
+
+        public static int FindFirstOccurance(int[] a, int v)
+        {
+            // Fill here...
+
+			for(int i = 0; i < a.Length; i++)
+			{
+				if (v == a[i])
+				{
+					return i;
+				}
+			}
+
+            return 0;
+        }
+
+
+        [Fact]
+        public void Test1()
+        {
+            Assert.Equal(1, FindFirstOccurance(new int[] { 3, 5, 23 }, 5));
+        }
+        [Fact]
+        public void Test2()
+        {
+            Assert.Equal(3, FindFirstOccurance(new int[] { 7, 12, 15, 15, 15, 23, 1 }, 15));
+        }
+        [Fact]
+        public void Test3()
+        {
+            Assert.Equal(-1, FindFirstOccurance(new int[] { 73, 42 }, 999));
+        }
+    }
+}
